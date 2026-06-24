@@ -1,0 +1,88 @@
+name: Sk3llyZ1psPunishments
+version: 1.1.0
+main: dev.adminpunish.AdminPunish
+api-version: 1.21
+description: Advanced punishment & moderation system by Sk3llyZ1ps
+authors: [Sk3llyZ1ps]
+
+commands:
+  offend:
+    description: Punish a player with a preset offense
+    usage: /offend <player> <offense> [note...]
+    permission: adminpunish.offend
+  offendgui:
+    description: Open a GUI to punish a player with a preset offense
+    usage: /offendgui <player>
+    permission: adminpunish.offend
+  offenses:
+    description: Open the active offenses GUI
+    usage: /offenses
+    permission: adminpunish.offenses
+  history:
+    description: View a player's full punishment history
+    usage: /history <player>
+    permission: adminpunish.history
+  alt:
+    description: Look up a player's alt accounts
+    usage: /alt <player>
+    permission: adminpunish.alt
+  unpunish:
+    description: Remove any active punishment from a player
+    usage: /unpunish <player>
+    permission: adminpunish.unpunish
+  warn:
+    description: Warn a player
+    usage: /warn <player> <reason...>
+    permission: adminpunish.warn
+  warnhistory:
+    description: View a player's warning history
+    usage: /warnhistory <player>
+    permission: adminpunish.warn
+  freeze:
+    description: Freeze or unfreeze a player in place
+    usage: /freeze <player>
+    permission: adminpunish.freeze
+  banhammer:
+    description: Equip the ban hammer with a preset offense
+    usage: /banhammer <offense>
+    permission: adminpunish.banhammer
+  unhammer:
+    description: Put away the ban hammer and restore your inventory
+    usage: /unhammer
+    permission: adminpunish.banhammer
+  vanish:
+    description: Toggle vanish - hide yourself from non-op players
+    usage: /vanish
+    permission: adminpunish.vanish
+
+permissions:
+  adminpunish.offend:
+    description: Use the /offend and /offendgui commands
+    default: op
+  adminpunish.offenses:
+    description: View the active offenses GUI
+    default: op
+  adminpunish.history:
+    description: View a player's punishment history
+    default: op
+  adminpunish.alt:
+    description: Look up alt accounts
+    default: op
+  adminpunish.unpunish:
+    description: Remove any punishment from a player
+    default: op
+  adminpunish.warn:
+    description: Warn players and view warning history
+    default: op
+  adminpunish.freeze:
+    description: Freeze or unfreeze a player
+    default: op
+  adminpunish.banhammer:
+    description: Use the ban hammer
+    default: op
+  adminpunish.vanish:
+    description: Use /vanish
+    default: op
+  adminpunish.bypass.vpn:
+    description: Bypass VPN detection
+    default: op

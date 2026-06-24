@@ -1,0 +1,91 @@
+# Sk3llyZ1ps Punishments Configuration
+
+# Discord Webhook URL (paste your webhook URL here)
+discord-webhook: ""
+
+# Anti-VPN settings
+anti-vpn:
+  enabled: true
+  # API key from proxycheck.io (free tier available at proxycheck.io)
+  # Leave blank to use the free unauthenticated tier (lower rate limit).
+  proxycheck-api-key: ""
+  # Risk score threshold (0-100). Players scoring this or above are kicked.
+  # Lower = stricter. 75 is recommended. Set to 100 to disable risk-score checks.
+  risk-threshold: 75
+  kick-message: "&cVPN/Proxy connections are not allowed on this server.\n&7Please disable your VPN and reconnect."
+  # How many days to remember a "clean" or "flagged" IP result before re-checking it.
+  # This avoids burning API quota re-checking the same IPs every restart.
+  cache-days: 30
+
+# Ban evasion detection: when a player joins on an IP that's linked to another
+# name with a currently active ban, alert staff (those with adminpunish.offend).
+ban-evasion-alerts: true
+
+# Messages prefix
+prefix: "&8[&bSk3llyZ1ps&8] &r"
+
+# GUI Settings
+gui-title: "&8&lSk3llyZ1ps Punishments"
+offend-gui-title: "&8&lPunish Player"
+
+# Require staff to type "confirm" as an extra argument (or confirm in the GUI /
+# right-click the ban hammer twice) before a PERMANENT offense is applied.
+# This helps prevent accidental perma-bans from a typo.
+require-confirm-for-permanent: true
+# Seconds a banhammer's permanent-offense confirmation stays valid before it expires.
+confirm-timeout-seconds: 8
+
+# Commands muted players are still allowed to run (without the leading slash).
+# Anything NOT on this list is blocked while muted - this is a safer default
+# than trying to maintain a list of every chat-like command to block.
+muted-allowed-commands:
+  - "spawn"
+  - "rules"
+  - "help"
+  - "helpop"
+  - "report"
+
+# Freeze settings
+freeze:
+  freeze-message: "&c&lYou have been frozen by staff.\n&7Do not log out - logging out while frozen may be treated as evasion."
+  disconnect-alert: true
+
+# Offense definitions
+# type: BAN or MUTE
+# duration: in minutes (-1 = permanent)
+offenses:
+  CHEATS:
+    display: "Cheats/Exploits"
+    type: BAN
+    duration: 14400   # 10 days in minutes
+    color: RED
+  DUPING:
+    display: "Duping"
+    type: BAN
+    duration: 43200   # 30 days
+    color: DARK_RED
+  BAN_EVADING:
+    display: "Ban Evading"
+    type: IPBAN
+    duration: -1      # permanent
+    color: DARK_RED
+  BUG_ABUSE:
+    display: "Bug Abuse/Glitches"
+    type: BAN
+    duration: 14400   # 10 days
+    color: RED
+  STAFF_DISRESPECT:
+    display: "Staff Disrespect"
+    type: MUTE
+    duration: 60      # 1 hour
+    color: YELLOW
+  SPAMMING:
+    display: "Spamming"
+    type: MUTE
+    duration: 30      # 30 minutes
+    color: YELLOW
+  SLURS:
+    display: "Slurs"
+    type: MUTE
+    duration: 1440    # 1 day
+    color: GOLD
